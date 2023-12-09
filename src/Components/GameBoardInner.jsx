@@ -18,9 +18,6 @@ export default function GameBoardInner({
   const [btnDisabled, setBtnDisabled] = useState(Array(9).fill(false))
 
   useEffect(() => {
-    ;(async () => {
-      await sleep(100)
-    })()
     checkWin()
     setBtnDisabled(tileSymbol.map((tile) => (tile !== "" ? true : false)))
   }, [xMoves, oMoves, tileSymbol])
@@ -62,10 +59,6 @@ export default function GameBoardInner({
     })
     console.log({ xWin })
     console.log({ oWin })
-  }
-
-  async function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms))
   }
 
   function selectTile(e) {
