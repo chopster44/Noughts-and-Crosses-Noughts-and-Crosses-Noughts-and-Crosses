@@ -94,3 +94,8 @@ main {
 .hidden {
   display: none;
 }
+
+:disabled {
+  cursor: default;
+  color: black;
+}
